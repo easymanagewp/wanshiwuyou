@@ -1,0 +1,22 @@
+.logobox{padding:32px 20px}
+.logobg{float:left}
+.word{color: #666666;border-left:1px solid #666;font-size: 18px;height: 26px;line-height: 26px;margin-left: 14px;
+    padding-left: 14px;float:left;}
+.mian{padding:20px;background: #fff;border:1px solid #D7D7D7}
+.leftList{ border-right: 1px solid #cccccc;float: left;margin-left:20px;
+    height: auto !important;min-height: 500px;width: 750px;text-align: left}
+.leftList ul li{margin-top:25px;}
+.leftList span{text-align: right;display:inline-block;width:150px}
+.leftList input,select,textarea{height:32px;line-height:32px;width:250px;font-size: 14px;text-indent:8px}
+.rightLogin{width:255px;margin-top:21px}
+.rightLogin .login_btn{margin-top:15px}
+.login_register_btn{color:#1278BD}
+.space{margin-top:50px;text-align: left}
+.login_right_title{font-size: 18px;padding:10px 0;color:#FF3300;font-weight:bold;}
+.rightLogin p{padding:5px 0;text-align:left}
+#validate_code{width:180px}
+.validate_code_imgs{height:32px;width:70px;line-height:32px;vertical-align: middle}
+.file_img{display:block;margin:20px 0 0 150px;width:250px;height:160px;border:1px solid #dedede}
+.file_imgicv{display:block;margin:20px 0 0 150px;}
+.my_info_img [type="file"]{margin-top:5px;text-indent: 0}
+.my_info_img .gray{width:400px;color:#9ea190;text-align:left;margin-top:5px;}

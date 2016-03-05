@@ -1,0 +1,16 @@
+// 首页
+extends layout
+
+block content
+  link(rel='stylesheet', href='/stylesheets/site.css')
+  .wrapper.clearfix
+    .logobox
+      .logo_search.clearfix
+        img(src="#{base_path}/images/logo.png")
+        .right.searchbar
+          input(type="text").search_btn#problem
+          a(href="javascript:void(0)").btn#search_problem 提交问题
+    script(type="text/javascript",src="/javascripts/business/site_search.js")
+    block site_view
+
+

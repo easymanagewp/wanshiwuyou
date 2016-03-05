@@ -1,0 +1,30 @@
+// 注册界面 - 第一步
+extends register_layout
+
+block content_form
+    form#register_1
+        ul(style="text-align:left")
+            li
+                span
+                    em.bitian *
+                    | 登录账号：
+                input(name="login_name",placeholder="电子邮箱/手机号/QQ号")
+            li
+                span
+                    em.bitian *
+                    | 昵称：
+                input(name="nickname",placeholder="请输入昵称")
+            li
+                span
+                    em.bitian *
+                    | 密码：
+                input(name="password",type="password",placeholder="请输入密码")
+            li
+                span
+                    em.bitian *
+                    | 确认密码：
+                input(name="password_confim",type="password",placeholder="请确认密码")
+            li.f_center
+                a(href="javascript:void(0)")#submit.btn 下一步
+
+            script(src="#{base_path}/javascripts/business/register_1.js")

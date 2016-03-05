@@ -1,0 +1,60 @@
+// 布局页面
+- var base_path = "http://localhost:3000";
+doctype html
+html
+  head
+    script(type="text/javascript").
+      var base_path = "#{base_path}";
+    script(type="text/javascript",src="#{base_path}/bower_components/requirejs/require.js")
+    script(type="text/javascript",src="#{base_path}/javascripts/app.js")
+    script(src="#{base_path}/javascripts/business/layout.js")
+    title= title
+    link(rel='stylesheet', href='/stylesheets/global.css')
+    link(rel='stylesheet', href='/stylesheets/headfoot.css')
+    script(type="text/javascript")
+      | var is_login = #{session.userInfo != null};
+
+  body
+    .contentbox(style="text-align:center")
+      .header.clearfix
+        .wrapper
+          .left
+            ul
+              li: a(href='javascript:void(0)')#shouye.headnav 设为首页 &nbsp;&nbsp;|
+              li: a(href='javascript:void(0)')#shoucang.headnav 加入收藏
+          - if(session && session.userInfo)
+
+            .right
+              ul
+                li: a(href="javascript:void(0)").headnav 欢迎您,#{session.userInfo.nickname}
+                li: a(href='/index.html').headnav 首页
+                li: a(href="/my_question.html").headnav 我的问题(<em id="wenti_count" style="color:yellow">0</em>)
+                li: a(href="/answer.html").headnav 我的回答(<em id="huida_count" style="color:yellow">0</em>)
+                li: a(href="javascript:void(0)")#messageView.headnav 消息(<em id="xiaoxi_count" style="color:yellow">0</em>)
+                li: a(href="/apply.html").headnav 信息推广
+                li: a(href="/user_center/base_info.html").headnav 我
+                li: a(href="javascript:void(0)").logout.headnav 退出
+          - else
+           .right
+             ul
+               li: a(href='/index.html').headnav 首页
+               li
+                 a(href="javascript:void(0)" onclick="to_login(window.location.href)").headnav 登录
+               li
+                 a(href="/register_1.html").headnav 注册
+               li
+                 a(href="").headnav 帮助
+
+      block content
+      .footer.center
+        .wrapper
+          ul
+            li
+              a(href="").footnav 关于我们 &nbsp;|
+            li
+              a(href="").footnav 参股合作 &nbsp;|
+            li
+              a(href="").footnav 使用方法 &nbsp;|
+            li
+              a(href="/feedback.html").footnav 建议反馈&nbsp; 晋ICP备09004455-2号
+

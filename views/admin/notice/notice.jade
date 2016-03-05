@@ -1,0 +1,58 @@
+.c_title_bar
+   .c_title_text="当前位置：网站管理 > 网站公告"
+
+.c_search_bar
+   | &nbsp;
+
+.c_list_container
+   script(type="text/template")#gridTemplate.
+      {{each rows as row}}
+         <tr>
+            <td class="center c_td_line"><input type="checkbox" class="id" value="{{row._id}}"/></td>
+            <td>{{row.title}}</td>
+            <td>
+               <a href="javascript:void(0)" onclick="DataForm.view('{{row._id}}')" ><img src="/images/admin/view.png" alt="查看" /></a>
+               <a href="javascript:void(0)" onclick="DataForm.edit('{{row._id}}')" ><img src="/images/admin/edit.png" alt="编辑" /></a>
+               <a href="javascript:void(0)" onclick="DataGrid.del('{{row._id}}')" ><img src="/images/admin/del2.png" alt="删除" /></a>
+            </td>
+         </tr>
+      {{/each}}
+
+   table(cellpadding="0",cellspacing="0",border="0").c_list_table
+      thead
+         tr
+            th(style="border:0",colspan="3")
+               .c_btn_bar
+                  .left
+                     a(href="javascript:void(0)",onclick="DataGrid.batchDel()").c_del 删除
+                  .right
+                     a(href="javascript:void(0)",onclick="DataForm.edit()").c_add 增加
+                     a(href="javascript:void(0)" onclick="DataGrid.reloadData()").c_shuaxin 刷新
+         tr
+            th(width="50").center.c_th_line: input(type="checkbox").ids
+            th 标题
+            th(width="120") 操作
+      tbody
+      tfoot
+         tr
+            td(colspan="3")
+               .c_btn_bar.pager
+
+.c_edit_container
+   .c_edit_head
+      h3 编辑
+   .c_edit_main
+      ul
+         li
+            label 标题
+            input(name="title")
+         li
+            label 内容
+            textarea(name="content")
+   .edit_btn_bar
+      button.save
+      button.close
+
+   script(type="text/javascript",src="/javascripts/business/admin/notice/notice.js")
+
+

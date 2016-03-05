@@ -1,0 +1,31 @@
+extends user_center_layout
+
+block form
+    h3.user_center_form_title 业务信息
+    form#business_info
+        input(name="_id",value=session.userInfo._id,type="hidden")
+        ul
+            li
+                span
+                    em.bitian *
+                    | 业务信息
+                input(name="business")
+            li
+                span
+                    em.bitian *
+                    | 广告词：
+                input(name="advertisement")
+            li
+                span
+                    em.bitian *
+                    | 网站地址：
+                input(name="home_page")
+            li
+                span
+                    em.bitian *
+                    | 网站名称：
+                input(name="home_name")
+            li
+                span &nbsp;
+                a(href="")#submit.btn 保存
+    script(type="text/javascript",src=base_path + "/javascripts/business/user_center_business_info.js")

@@ -1,0 +1,23 @@
+// 注册界面 - 第二步
+extends register_layout
+block content_form
+    form#register_2
+        ul
+            li
+                span
+                    em.bitian *
+                    | 注册您的业务：
+                input(name="business",placeholder="请输入您的业务信息")
+            li
+                span
+                    em.bitian *
+                    | 注册您的广告词：
+                input(name="advertisement",placeholder="请输入您的广告词")
+            li
+                span
+                    em.bitian *
+                    | 注册您的链接：
+                input(name="home_page",placeholder="请输入您的个人主页或者公司站点")
+            li.f_center
+                a(href="javascript:void(0)")#submit.btn 下一步
+    script(src="#{base_path}/javascripts/business/register_2.js")

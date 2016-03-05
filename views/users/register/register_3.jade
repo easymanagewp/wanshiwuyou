@@ -1,0 +1,29 @@
+// 注册界面 - 第三步
+extends register_layout
+
+block content_form
+    form#register_3
+        ul
+            li
+                span
+                    em.bitian *
+                    | 个人名片：
+                input(type="hidden",name="business_card")
+                input(placeholder="请上传你的个人名片",type="file",name='file')#business_card_select
+                img#business_card_view.file_img
+            li
+                span.left 头像：
+                input(type="hidden",name="head_img")
+                image(width=80,height=80).left#viewHeadImg
+                .left.marginl10.my_info_img
+                    | 本地上传
+                    br
+                    input(type="file",name="file")#selectHeadImg
+                    br
+                    span.gray 图片格式GIF,JPG,PNG,最适合尺寸为120*120像素
+                .clearfix &nbsp;
+
+
+            li.f_center
+                a(href="javascript:void(0)")#submit.btn 立即注册
+    script(src="#{base_path}/javascripts/business/register_3.js")

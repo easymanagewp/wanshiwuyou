@@ -1,0 +1,26 @@
+extends user_center_layout
+
+block form
+
+    h3.user_center_form_title 修改密码
+    form#reset_pwd_form
+        ul
+            li
+                span
+                    em.bitian *
+                    | 当前密码：
+                input(name="current_pwd")
+            li
+                span
+                    em.bitian *
+                    | 新密码：
+                input(name="new_pwd")
+            li
+                span
+                    em.bitian *
+                    | 确认密码：
+                input(name="new_pwd_confirm")
+            li
+                span &nbsp;
+                a(href="javascript:void(0)")#submit.btn 提交
+    script(type="text/javascript",src=base_path + "/javascripts/business/user_center_reset_pwd.js")

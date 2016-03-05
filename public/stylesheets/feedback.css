@@ -1,0 +1,5 @@
+.content{border:1px solid #797979;width:100%;margin-bottom: 20px;padding:20px;}
+.content table{margin-left:100px;text-align: right}
+.content table td{height:70px;line-height: 70px;}
+.content table td input{height:25px;line-height:25px;width:500px;text-indent: 10px;padding:5px}
+.content table td textarea{width: 500px;text-indent: 30px;min-height: 150px;padding:5px}

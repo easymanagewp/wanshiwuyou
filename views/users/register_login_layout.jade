@@ -1,0 +1,17 @@
+// 注册界面 - 第一步
+extends ../layout/layout
+block content
+    link(rel='stylesheet', href='/stylesheets/login_register.css')
+    .container.center
+        .wrapper
+            .logobox.clearfix
+                .logobg
+                    img(src="#{base_path}/images/logo.png")
+                span.word
+                    block title
+            .mian.clearfix
+                .leftList.left.clearfix
+                   block content_form
+                .rightLogin.right.clearfix.center
+                    block right
+                .clearfix &nbsp;

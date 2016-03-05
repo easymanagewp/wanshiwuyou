@@ -1,0 +1,30 @@
+extends ../../layout/layout
+
+block content
+    link(rel='stylesheet', href='/stylesheets/user_center.css')
+    .container
+        .wrapper
+            .user_center_left.left.center
+                h3 个人中心
+                ul
+                    li: a(href=base_path+"/user_center/base_info.html",class=module=='base'?'active':'') 基本信息
+                    li: a(href=base_path+"/user_center/business_info.html",class=module=='business'?'active':'') 业务信息
+                    li: a(href=base_path+"/user_center/my_info.html",class=module=='my'?'active':'') 个人信息
+                    li: a(href=base_path+"/user_center/reset_pwd.html",class=module=='reset'?'active':'') 修改密码
+            .user_center_right.left
+                .user_center_top
+                    - if(session.userInfo.head_img)
+                        img(src=base_path+session.userInfo.head_img).user_head_img.left
+                    - else
+                        img(src=base_path+"/images/uer_head_img.png").user_head_img.left
+                    .left.top_right
+                        p
+                            span.hi 下午好！
+                            span.nickname=session.userInfo.nickname
+                            a(href="javascript:void(0)").logout [退出登录]
+                        p.guanggao="广告词："+session.userInfo.advertisement
+                        p.yewu="业务信息："+session.userInfo.business
+                    .clearfix
+                .user_center_form
+                    block form
+            .clearfix

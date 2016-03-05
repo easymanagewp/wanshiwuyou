@@ -1,0 +1,87 @@
+.c_title_bar
+   .c_title_text="当前位置：用户管理 > 推广申请"
+
+.c_list_container
+   script(type="text/template")#gridTemplate.
+      {{each rows as row}}
+         <tr>
+            <td class="c_td_line" style="text-indent: 12px;">{{row.apply_user | userFormat:'nickname'}}</td>
+            <td style="text-align:center;">{{row.apply_time | dateFormat}}</td>
+            <td>{{row.apply_user | userFormat:'phone'}}</td>
+            <td>{{row.apply_user | userFormat:'email'}}</td>
+            <td>{{row.apply_user | userFormat:'business'}}</td>
+            <td>{{row.apply_user | userFormat:'advertisement'}}</td>
+            <td>
+               <a href="javascript:void(0)" onclick="DataForm.edit('{{row._id}}')" ><img src="/images/admin/view.png" alt="查看" /></a>
+            </td>
+         </tr>
+      {{/each}}
+   .c_search_bar
+      //
+         .left
+            | 昵称：
+            input(type="text")
+         .left
+            | 电话号码：
+            input(type="text")
+         .left
+            | 邮件：
+            input(type="text")
+         .c_btn_search
+            a(href="javascript:void(0)") 搜索
+
+   table(cellpadding="0",cellspacing="0",border="0").c_list_table
+      thead
+         tr
+            th.c_th_line 申请人
+            th 申请时间
+            th 电话号码
+            th 电子邮箱
+            th 业务信息
+            th 广告词
+            th(width="50") 操作
+      tbody
+      tfoot
+         tr
+            td(colspan="7")
+               .c_btn_bar.pager
+
+.c_edit_container
+   .c_edit_head
+      h3 推广申请
+   .c_edit_main
+      ul
+         li
+            label(style="vertical-align:top;") 个人名片：
+            img(src="",style="width:240px;height:160px;",)#business_card
+         li
+            label 申请人：
+            span#nickname
+         li
+            label 申请时间：
+            span#apply_time
+         li
+            label 广告词：
+            span#advertisement
+         li
+            label 推广业务：
+            span#business
+         li
+            label 业务类别：
+            span#business_type
+         li
+            label 网址：
+            a(href="")#home_page
+         li
+            input(type="hidden",name="approve_result")
+            label(style="vertical-align:top;") 审批意见
+            textarea(style="height:67px;width:240px;",name="approve_content")
+   div.edit_btn_bar
+      button#yes
+      button#no
+      button.close
+
+
+   script(type="text/javascript",src="/javascripts/business/admin/extension_apply/extension_apply.js")
+
+

@@ -1,0 +1,57 @@
+extends user_center_layout
+
+block form
+    h3.user_center_form_title 个人信息
+    form#my_info_form
+        input(type="hidden",name="_id",value=session.userInfo._id)
+        ul
+            li
+                span
+                    em.bitian *
+                    | 单位名称：
+                input(name="company")
+            li
+                span
+                    em.bitian *
+                    | 真实姓名：
+                input(name="real_name")
+            li
+                span
+                    em.bitian *
+                    | 职务：
+                input(name="duties")
+            li
+                span
+                    em.bitian *
+                    | 地址：
+                input(name="address")
+            li
+                span
+                    em.bitian *
+                    | 邮编：
+                input(name="zip_code")
+            li
+                span
+                    em.bitian *
+                    | 传真：
+                input(name="fax")
+            li.clearfix
+                span.left
+                    em.bitian *
+                    | 介绍：
+                textarea(style="height:60px;",name="introduce").left
+            li
+                input(type="hidden",name="head_img")
+                span.left 头像：
+                image(width=80,height=80).left#viewHeadImg
+                .left.marginl10.my_info_img
+                    | 本地上传
+                    br
+                    input(type="file",name="file")#selectHeadImg
+                    br
+                    span.gray 图片格式GIF,JPG,PNG,最适合尺寸为120*120像素
+                .clearfix &nbsp;
+            li
+                span &nbsp;
+                a(href="javascript:void(0)")#submit.btn 保存
+    script(type="text/javascript",src=base_path + "/javascripts/business/user_center_my_info.js")

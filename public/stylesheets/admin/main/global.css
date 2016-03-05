@@ -1,0 +1,22 @@
+  @charset "UTF-8";
+  /* global */
+  html {padding:0;margin:0;}
+  body {font-size:12px;font-family:"微软雅黑";color:#363636;margin:0 }
+  a {text-decoration:none;color:#323232;cursor:pointer;}
+  a:hover {color:#f60;text-decoration:none;}
+  a:focus{outline:none;}
+  li {list-style:none;}
+  img {border:none;} 
+  h1, h2, h3, h4, h5, h6 {font-weight:normal;padding:0;margin:0;}
+  p,ul,ol,dl,dt,dd,li,forms,input,fieldset {padding:0;margin:0;}
+  .clear {clear:both;}
+  .left{float:left;}
+  .right{float:right;}
+  .center{text-align: center}
+  input{border:1px solid #C6CBD1;border-radius:3px;font-size: 12px;padding-left: 5px}
+  body{overflow-x:hidden }
+
+  /*html5*/
+  article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+
+  

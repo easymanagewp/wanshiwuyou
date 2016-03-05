@@ -1,0 +1,12 @@
+extends layout/layout
+
+block content
+   script(type="text/javascript").
+      var redirectUrl = "#{redirectUrl}";
+      require(['utils'],function($$Utils){
+         if(confirm('您尚未登录，是否立即登录？')) {
+            to_login(redirectUrl);
+         }else{
+            $$Utils.next('/index.html');
+         }
+      });

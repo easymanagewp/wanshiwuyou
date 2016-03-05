@@ -1,0 +1,17 @@
+// 首页
+extends ../layout/site_layout
+
+block site_view
+  link(rel='stylesheet', href='/stylesheets/feedback.css')
+  .content
+    table
+      tr
+        td 联系方式:
+        td: input#contact_information
+      tr
+        td 反馈内容:
+        td: textarea#content
+      tr
+        td(colspan="2"): button#submit.btn 提交
+  script(type="text/javascript",src=base_path+"/javascripts/business/feedback.js")
+

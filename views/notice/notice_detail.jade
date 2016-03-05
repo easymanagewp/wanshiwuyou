@@ -1,0 +1,12 @@
+// 首页
+extends ../layout/site_layout
+block site_view
+   link(rel='stylesheet', href='/stylesheets/extension_apply.css')
+   link(rel='stylesheet', href='/stylesheets/notice.css')
+   .wrapper.navbar-fixed-top
+      .navbar-text
+         | 位置：网站公告
+   .notice_con
+      h2=notice.title
+      .txt_box=notice.content
+

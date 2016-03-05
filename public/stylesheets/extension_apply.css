@@ -1,0 +1,57 @@
+
+/* nav */
+.navbar-fixed-top{background: #EEE3E5;height:42px;line-height: 42px;width: 100%;text-align:left}
+.navbar-text{width:158px;background: #AD0000;text-align: center;color:#fff;font-size: 16px}
+
+/* 信息发布 */
+.ext_content{border:1px solid #B8B8B8;}
+.con_left{width:626px;padding:20px;}
+.wx_prompt{width:384px;border:1px solid #FF0F0F;color:#FF0F0F;border-radius:5px;padding:5px 8px;
+    font-size: 12px;margin-left:100px;}
+.leftList{ margin-left:10px; height: auto !important;min-height: 500px;}
+.leftList ul li{margin-top:25px;}
+.leftList span{text-align: right;display:inline-block;width:150px}
+.leftList ul li p{margin-left:150px;font-size: 12px;color:#626262;margin-top:5px;width:330px}
+.leftList input,select,textarea{height:32px;width:340px;font-size: 14px;text-indent:8px}
+.con_right{padding:20px;}
+.card{border:1px solid #CCCCCC;width:228px;height:142px;
+   text-align: center}
+.card img{width:226px;height:140px;margin-top:1px}
+.note{font-size: 12px;color:#626262;margin-top:5px;}
+.card_btn{margin-top:30px;}
+.card_btn a,.card_btn2{color:#fff;display: inline-block;background: #f60;border:1px solid #E00000;padding:0 10px;height:28px;line-height:28px;text-align:center;border-radius:2px;margin-right:6px}
+.card_btn2:hover{color:#ffffbb}
+/*我的提问*/
+.ul_titie_question_answer{border-top:1px solid #b8b8b8;border-left:1px solid #b8b8b8;border-right:1px solid #b8b8b8;}
+.my_title {height:42px;line-height: 42px;padding-left:15px;font-weight:bold;border-bottom: 1px solid #B8B8B8}
+.my_title a{margin-right: 25px;color: #c0000c}
+.reply_box{z-index: 9999;padding:0 53px 10px;}
+.ul_titie_question_answer .question{line-height:30px;padding:10px 0}
+.reply_box img{border:1px solid #ccc;padding:2px;height:32px;width:32px;vertical-align: middle}
+.reply_box span{margin-left:10px;display: inline-block}
+.reply_box .red{color:#cc0000}
+.reply_box .guanggao{color:#636363}
+.reply_box .time{font-size: 12px;color:#636363;margin-right:10px;}
+.reply_box li{margin-bottom: 10px;}
+.inputbox{border:1px solid #DBDBDB;border-radius:3px;background: #F7F7F7;}
+.my_title .card_btn2{color:#fff}
+.my_title .space1{margin-top:6px;margin-right:0}
+.space{margin-left:13px;}
+.my_title .btnf60{height:28px;line-height:28px;text-align:center;width:120px;background: #FF6600;border:1px solid #E00000;border-radius:3px;color:#fff;margin-top:4px;display:inline-block;}
+.ul_titie_question_answer .include{padding:10px 0}
+.xunhuan{margin-top:27px;margin-left:118px;}
+.xunhuan_number{padding:0 20px;border-bottom:1px solid #b8b8b8;}
+
+.p_width1{width:545px;}
+.title_border_top{border-top:1px solid #b8b8b8}
+.conversation_box{padding:0 60px;}
+.jiaoliubox{padding:20px 40px 0;overflow: hidden;}
+.jiaoliu_my{margin-bottom:10px;padding:8px;border:1px solid #D1CFAF;background:#FCFBE7;border-radius:8px}
+.jiaoliu_my .title-img{border-bottom: 1px solid #D1CFAF;padding-bottom: 8px;line-height:30px;}
+.jiaoliu_my .reply-txt{padding-left:50px;padding-top: 5px;text-align: left}
+.jiaoliu_you{margin-bottom:10px;padding:8px;border:1px solid #AFCDBE;background:#F0FCE8;border-radius:8px}
+.jiaoliu_you .title-img{border-bottom: 1px solid #AFCDBE;padding-bottom: 8px;line-height:30px;}
+.jiaoliu_you .reply-txt{padding-left:50px;padding-top: 5px;text-align: left}
+.inputbox textarea{padding:10px;height:100px;min-height:100px;width:96%;margin-top:20px;border-radius:8px;border:1px solid #9ea190;}
+.textarea_box{border-top:1px solid #D5D5D5;padding:0 43px 20px;text-align:left}
+.jiaoliubox{height:313px;}

@@ -1,0 +1,156 @@
+extends ../layout/site_layout
+
+block site_view
+    link(rel='stylesheet', href='/stylesheets/extension_apply.css')
+
+    script(type="text/template")#ConversationBox.
+        {{if _Conversation.thisConversation}}
+            <div class="jiaoliu_my clearfix">
+        {{else}}
+            <div class="jiaoliu_you clearfix">
+        {{/if}}
+            <div class="title-img clearfix">
+                <div class="left">
+                    <img src="#{base_path}{{_Conversation.send_user.head_img}}"/>
+                    <span class="red">{{_Conversation.send_user.nickname}}</span>
+                </div>
+                <div class="right">
+                    <span class="time">{{_Conversation.send_time | dateFormat}}</span>
+                </div>
+            </div>
+            <div class="reply-txt">
+                {{_Conversation.content}}
+            </div>
+            </div>
+
+    script(type="text/template")#QuestionList.
+        {{each _Answers as _Answer index}}
+            <li class="clearfix">
+                <div class="my_title">
+                    <div class="left">
+                        提问#<span>{{index+1}}:</span>【注册用户】{{_Answer.question.question}}     (信息交流条数：{{_Answer.question.jiaoLiuCount}})
+                    </div>
+                    <div class="right">
+                        <span >【{{_Answer.question.send_time | dateFormat}}】</span>
+                        <a id="{{_Answer.question._id}}_huifu_btn" href='javascript:void(0)' onclick="showQuestionInfo('{{_Answer._id}}','{{_Answer.question._id}}')" class='card_btn2 space1'>回复</a>
+                        <a class="right" href="javascript:void(0)" onclick="delQuestion('{{_Answer._id}}')">（不再回答该问题！）</a>
+                    </div>
+                </div>
+                <div class="reply_box" id="{{_Answer._id}}" style="display:none">
+                    <div class="question clearfix">
+                        <div class="left">
+                            提问者：
+                            <img src="#{base_path}{{_Answer.question.send_user.head_img}}">
+                            <span class="red">{{_Answer.question.send_user.nickname}}</span>
+                            <span class="guanggao">{{_Answer.question.send_user.advertisement}}:</span>
+                            <span>{{_Answer.question.lastConversation.content}}</span>
+                        </div>
+                        <div class="right">
+                            <span class="time">2015-05-02 00:02:22</span>
+                        </div>
+                    </div>
+                    <div class="conversation_box clearfix">
+                        <div class="inputbox">
+                            <div class="jiaoliubox" id="{{_Answer.question._id}}_conversation">
+                            </div>
+                            <div class="textarea_box">
+                                <textarea></textarea>
+                                <a style="display:none" href="javascript:void(0)" onclick="sendMessage('{{_Answer._id}}','{{_Answer.question._id}}','{{_Answer.question.send_user._id}}',this)" class="card_btn2 space">回答(Ctrl+回车键)</a>
+                                (Ctrl+回车键发送消息)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {{/each}}
+
+    .wrapper.navbar-fixed-top
+        .navbar-text
+            | 位置：我的回答
+    .blank
+        .ul_titie_question_answer.clearfix
+            ul
+                li.clearfix
+                    .my_title
+                        .left
+                            | 提问#
+                            span 4:
+                            |【注册用户】找工作你好，哈哈     (信息交流条数：0)
+                        .right
+                            span 【2015-8-21 19:13:36】
+                            a(href="") （不再回答该问题！）
+                    .reply_box
+                        .question.clearfix
+                            .left
+                                .left 提问者：
+                                img(src="#{base_path}/images/head.png")
+                                span.red anjing1993
+                                span.guanggao 如果你不来，广告明星就是他就是他:
+                                span 回复内容回复内容回复内容回复内容回复内容回复
+                            .right
+                                span.time 2015-05-02 00:02:22
+                                a(href="").card_btn2 回 复
+                        .conversation_box.clearfix
+                            .inputbox
+                                .jiaoliubox
+                                    .jiaoliu_my.clearfix
+                                        .title-img.clearfix
+                                            .left
+                                                img(src="#{base_path}/images/head.png")
+                                                span.red anjing1993
+                                            .right
+                                                span.time 2015-05-02 00:02:22
+                                        .reply-txt
+                                            |咖啡店的开发力度开发了收款方老师lkls上能否能反复说服你没说你烦死你方式，能否，上的那麻烦
+                                    .jiaoliu_you.clearfix
+                                        .title-img.clearfix
+                                            .left
+                                                img(src="#{base_path}/images/head.png")
+                                                span.red anjing1993
+                                            .right
+                                                span.time 2015-05-02 00:02:22
+                                        .reply-txt
+                                            |咖啡店的开发力度开发了收款方老师lkls上能否能反复说服你没说你烦死你方式，能否，上的那麻烦
+                                    .jiaoliu_my.clearfix
+                                        .title-img.clearfix
+                                            .left
+                                                img(src="#{base_path}/images/head.png")
+                                                span.red anjing1993
+                                            .right
+                                                span.time 2015-05-02 00:02:22
+                                        .reply-txt
+                                            |咖啡店的开发力度开发了收款方老师lkls上能否能反复说服你没说你烦死你方式
+                                .textarea_box
+                                    textarea 请输入回复内容
+                                    a(href="").card_btn2.space 回 答
+                li
+                    .my_title.title_border_top
+                        | 提问#
+                        span 4:
+                        |【注册用户】找工作你好，哈哈     (信息交流条数：0)
+                        .right
+                            span 【2015-8-21 19:13:36】
+                            a(href="").card_btn2.space1 回复
+                            a(href="") （不再回答该问题！）
+
+
+                li
+                    .my_title
+                        | 提问#
+                        span 4:
+                        | 【注册用户】找工作你好，哈哈     (信息交流条数：0)
+                        .right
+                            span 【2015-8-21 19:13:36】
+                            a(href="").card_btn2.space1 回复
+                            a(href="") （不再回答该问题！）
+                li
+                    .my_title
+                        | 提问#
+                        span 4:
+                        | 【注册用户】找工作你好，哈哈     (信息交流条数：0)
+                        .right
+                            span 【2015-8-21 19:13:36】
+                            a(href="").card_btn2.space1 回复
+                            a(href="") （不再回答该问题！）
+    script(type="text/javascript",src="/javascripts/business/my_answer.js")
+

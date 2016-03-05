@@ -1,0 +1,37 @@
+// 注册界面 - 第一步
+extends ../register_login_layout
+block title
+    | 用户登录
+block right
+    p.rightList.login_right_title 万事无忧 为您解忧！
+    p 1、我们将企业、组织、个人作为服务对象，立志给您所关切的问题找到满意的答案；
+    p 2、我们给每一位普通人提供发挥自己特长的地方，让每一位心中有烦恼的人找到解决烦恼的途径
+    p 3、只要有一部电脑或者智能手机，就能随时随地做生意、找朋友、问问题，随时有人在线为您关切的所有问题迅速找到满意的答案。
+block content_form
+    form#login
+        .space
+            ul
+                li
+                    span
+                        em.bitian *
+                        | 用户名：
+                    input(name="login_name",placeholder="请输入登录账号")
+                li
+                    span
+                        em.bitian *
+                        | 密码：
+                    input(name="password",type="password",placeholder="请输入登录账号")
+                li
+                    span
+                        em.bitian *
+                        | 验证码：
+                    input(name="validate_code",type="text",placeholder="")#validate_code
+                    img(src="" style="cursor:pointer;").validate_code_imgs
+                li.clearfix &nbsp;
+                li.f_center
+                    a(href="javascript:void(0)")#submit.btn 登 录
+                    a(href="").marginl30 忘记密码？
+                li.f_center
+                    | 还没有注册过？
+                    a(href="#{base_path}/register_1.html").marginl10.login_register_btn 免费注册
+        script(src="#{base_path}/javascripts/business/login.js")

@@ -1,0 +1,8 @@
+// 注册界面 - 第一步
+extends ../register_login_layout
+block title
+    | 新用户注册
+block right
+    p.rightList 已有通行账号，请直接登录
+        a(href=base_path+"/login.html")
+            img(src="#{base_path}/images/login.png").login_btn

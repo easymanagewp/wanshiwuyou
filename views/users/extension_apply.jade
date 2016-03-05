@@ -1,0 +1,49 @@
+extends ../layout/site_layout
+
+block site_view
+    link(rel='stylesheet', href='/stylesheets/extension_apply.css')
+    .wrapper.navbar-fixed-top
+        .navbar-text
+            | 位置：信息发布
+    form.ext_content.clearfix
+        .con_left.left
+            .wx_prompt
+                p 温馨提示：为了便于浏览者更直接地找到您办理有关业务，您可以在这里发布您的业务，管理员审核通过后将按照您的要求将您的业务显示在首页相关栏目，需要的人就可以在首页直接找到您，和您进行深入的沟通。
+
+            .leftList
+                ul
+                    li
+                        span
+                            em.bitian *
+                            | 网址：
+                        input(name="home_page")
+                        p 注：请输入推广的业务相关网址
+                    li
+                        span
+                            em.bitian *
+                            | 广告词：
+                        input(name="advertisement",placeholder="")
+                        p 注：您可以为您的业务或者企业编辑广告词，等待管理员审核
+                    li
+                        span
+                            em.bitian *
+                            | 类 别：
+                        select(name="business_type" placeholder="请输入类别")
+                        p 注：按照推广分类由客户点击选择，如果没有现成的分类客户可填写一个分类，提交给管理员，由管理员创建一个分类
+                    li
+                        span
+                            em.bitian *
+                            | 推广的业务：
+                        input(name="business",placeholder="请输入推广的业务")
+                    li.f_center
+                        a(href="javascript:void(0)")#submit.btn.marginl30 提 交
+
+        .con_right.left
+            .card
+                img(src="#{base_path}/images/card.png")#imageView
+                input(type='hidden',name="business_card")#imagePath
+            p.note 注：您在本站已经注册过的个人名片，便于浏览者了解您的信息
+            .card_btn
+                a(href="javascript:void(0)")#imageSelect 预览
+    script(src="/javascripts/business/extension_apply.js",type="text/javascript",charset="utf-8")
+

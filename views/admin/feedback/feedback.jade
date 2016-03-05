@@ -1,0 +1,56 @@
+.c_title_bar
+   .c_title_text="当前位置：网站管理 > 反馈列表"
+
+.c_list_container
+   script(type="text/template")#gridTemplate.
+      {{each rows as row}}
+         <tr>
+            <td class="c_td_line" style="text-indent: 12px;">{{row.contact_information}}</td>
+            <td>{{row.content}}</td>
+            <td>{{row.create_time | dateFormat}}</td>
+            <td>{{row.process_status+"" | processFormat}}</td>
+            <td>
+               <a href="javascript:void(0)" onclick="DataForm.edit('{{row._id}}')" ><img src="/images/admin/view.png" alt="查看" /></a>
+            </td>
+         </tr>
+      {{/each}}
+   .c_search_bar
+      .c_search_border
+
+   table(cellpadding="0",cellspacing="0",border="0").c_list_table
+      thead
+         tr
+            th.c_th_line 联系方式
+            th 反馈内容
+            th 反馈时间
+            th 状态
+            th(width="50") 操作
+      tbody
+      tfoot
+         tr
+            td(colspan="7")
+               .c_btn_bar.pager
+
+.c_edit_container
+   .c_edit_head
+      h3 建议反馈
+   .c_edit_main
+      ul
+         li
+            label 联系方式：
+            input(name="contact_information")
+         li
+            label 反馈时间：
+            input(name="create_time")
+         li
+            label 反馈内容：
+            textarea(name="content")
+
+   div.edit_btn_bar
+      button.save
+      button.close
+
+
+   script(type="text/javascript",src="/javascripts/business/admin/feedback/feedback.js")
+
+

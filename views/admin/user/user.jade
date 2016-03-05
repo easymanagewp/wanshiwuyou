@@ -1,0 +1,122 @@
+.c_title_bar
+   .c_title_text="当前位置：用户管理 > 用户信息"
+
+.c_list_container
+   script(type="text/template")#gridTemplate.
+      {{each rows as row}}
+         <tr>
+            <td class="c_td_line" style="text-indent: 12px;">{{row.nickname}}</td>
+            <td>{{row.qq}}</td>
+            <td>{{row.phone}}</td>
+            <td>{{row.email}}</td>
+            <td>{{row.business}}</td>
+            <td>{{row.advertisement}}</td>
+            <td>
+               <a href="javascript:void(0)" onclick="DataForm.view('{{row._id}}')" ><img src="/images/admin/view.png" alt="查看" /></a>
+            </td>
+         </tr>
+      {{/each}}
+   .c_search_bar
+      .c_search_border
+         .left
+            | 昵称：
+            input(type="text")
+         .left
+            | 电话号码：
+            input(type="text")
+         .left
+            | 邮件：
+            input(type="text")
+         .c_btn_search
+            a(href="javascript:void(0)") 搜索
+
+   table(cellpadding="0",cellspacing="0",border="0").c_list_table
+      thead
+         tr
+            th.c_th_line 昵称
+            th qq号码
+            th 电话号码
+            th 电子邮箱
+            th 业务信息
+            th 广告词
+            th(width="50") 操作
+      tbody
+      tfoot
+         tr
+            td(colspan="7")
+               .c_btn_bar.pager
+
+.c_edit_container
+   .c_edit_head
+      h3 用户信息
+   .c_edit_main
+      ul
+         li.c_edit_head_level2: strong 基本信息
+         li
+            label(style="vertical-align:top;") 头像：
+            img(width="50",height="50")#head_img
+         li
+            label 昵称：
+            input(name="head_img",type="hidden")
+            input(name="nickname")
+         li
+            label qq：
+            input(name="qq")
+         li
+            label 电子邮箱：
+            input(name="email")
+         li
+            label 电话号码：
+            input(name="phone")
+         li.c_edi_head_level2: strong 业务信息
+         li
+            label 业务类型：
+            input(name="business")
+         li
+            label 业务信息：
+            input(name="business")
+         li
+            label 广告词：
+            input(name="advertisement")
+         li
+            label 网址：
+            input(name="home_page",type="hidden")
+            input(name="home_name",type="hidden")
+            a(href="")#home_page
+         li
+            label(style="vertical-align:top;") 个人名片：
+            input(name="business_card",type="hidden")
+            img(src="",style="width:240px;height:160px;",)#business_card
+         li.c_edi_head_level2: strong 个人信息
+         li
+            label 单位信息：
+            input(name="company")
+         li
+            label 真实姓名：
+            input(name="real_name")
+         li
+            label 职务：
+            input(name="duties")
+         li
+            label 地址：
+            input(name="address")
+         li
+            label 固定电话：
+            input(name="fixed_tel")
+         li
+            label 邮政编码：
+            input(name="zip_code")
+         li
+            label 传真：
+            input(name="fax")
+         li
+            label 介绍：
+            input(name="introduce")
+   div.edit_btn_bar
+      button.save 保存
+      button.close 关闭
+
+
+   script(type="text/javascript",src="/javascripts/business/admin/user/user.js")
+
+
