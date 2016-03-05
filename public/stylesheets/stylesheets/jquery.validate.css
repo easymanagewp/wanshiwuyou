@@ -1,0 +1,9 @@
+/* JQueryValidate 错误信息样式 */
+label.error {
+    background: url("../images/erron.png") no-repeat;height:26px;width:253px;
+   vertical-align: middle;line-height:26px;
+    margin-left: 5px;color:#666;display: inline-block;padding-left:35px;
+}
+.valid{
+    color:green;
+}

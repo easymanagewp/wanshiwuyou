@@ -4,109 +4,21 @@ extends ../layout/site_layout
 block site_view
   link(rel='stylesheet', href='/stylesheets/index.css')
   .business_type_bar.clearfix
-    ul.business_type_bar
+    ul#business_type_bar
   .sy_contentbox.clearfix
-    .banner_box
-      img(src="#{base_path}/images/banner.png")
-    .news_box.clearfix
-      .title.left
-        p.txt_n NEWS
-        p.txt_z 最新公告
-      .news_con.left
-        ul#notice
-          li
-            img(src="#{base_path}/images/A.png")
-            span [公告]
-            a(href="") 公告公告公告公告公告公告公告公告
-              i 2015-02-03
-          li
-            img(src="#{base_path}/images/B.png")
-            span [公告]
-            a(href="") 公告公告公告公告公告公告公告公告
-             i 2015-02-03
-          li
-            img(src="#{base_path}/images/C.png")
-            span [公告]
-            a(href="") 公告公告公告公告公告公告公告公告
-              i 2015-02-03
-          li
-            img(src="#{base_path}/images/D.png")
-            span [公告]
-            a(href="") 公告公告公告公告公告公告公告公告
-              i 2015-02-03
-            li
-              img(src="#{base_path}/images/E.png")
-              span [公告]
-              a(href="") 公告公告公告公告公告公告公告公告
-                i 2015-02-03
-    .subnav
-      ul.business_type_bar
+    .left_cont
+      table(cellpadding="0",cellspacing="0",border="0").tabbedtable#extension_user_list
+        tr
+          th(width="110").center 头像
+          th(width="") 昵称
+          th 广告词
+          th 业务信息
+          th
 
-    .infos_box.clearfix#extension_user_list
-      ul.infos
-        li.info
-          .link_pic
-            img(src="#{base_path}/images/sy_card.png")
-          .div
-            img(src="#{base_path}/images/name_img.png")
-            | 1124417071
-            span 如果你不来，广告明星就是他他他
-          .i-descr
-            p 组织文化交流活动，会议及展览展示组织文化交流活动，会议及展览展示组织文化
-          .jiaoliu_btn
-            a(href="") 在线交流
-      ul.infos
-        li.info
-          .link_pic
-            img(src="#{base_path}/images/sy_card.png")
-          .div
-            img(src="#{base_path}/images/name_img.png")
-            | 1124417071
-            span 如果你不来，广告明星就是他他他
-          .i-descr
-            p 组织文化交流活动，会议及展览展示组织文化交流活动，会议及展览展示组织文化
-          .jiaoliu_btn
-            a(href="") 在线交流
-      ul.infos
-        li.info
-          .link_pic
-            img(src="#{base_path}/images/sy_card.png")
-          .div
-            img(src="#{base_path}/images/name_img.png")
-            | 1124417071
-            span 如果你不来，广告明星就是他他他
-          .i-descr
-            p 组织文化交流活动，会议及展览展示组织文化交流活动，会议及展览展示组织文化
-          .jiaoliu_btn
-            a(href="") 在线交流
-      ul.infos
-        li.info
-          .link_pic
-            img(src="#{base_path}/images/sy_card.png")
-          .div
-            img(src="#{base_path}/images/name_img.png")
-            | 1124417071
-            span 如果你不来，广告明星就是他他他
-          .i-descr
-            p 组织文化交流活动，会议及展览展示组织文化交流活动，会议及展览展示组织文化
-          .jiaoliu_btn
-            a(href="") 在线交流
-    a(href="javascript:void(0)").view_more.center 查看更多
-
-
-    //.left_cont
-    //  table(cellpadding="0",cellspacing="0",border="0").tabbedtable#extension_user_list
-    //    tr
-    //      th(width="110").center 头像
-    //      th(width="") 昵称
-    //      th 广告词
-    //      th 业务信息
-    //      th
-    //
-    //  a(href="javascript:void(0)").view_more.center 查看更多
-    //.right_cont
-    //  ul#notice
-    //    li.title
-    //      b 网站公告
+      a(href="javascript:void(0)").view_more.center 查看更多
+    .right_cont
+      ul#notice
+        li.title
+          b 网站公告
   script(type="text/javascript",src=base_path+"/javascripts/business/index.js")
 

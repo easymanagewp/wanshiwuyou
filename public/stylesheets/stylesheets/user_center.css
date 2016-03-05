@@ -1,0 +1,23 @@
+/*left*/
+.user_center_left{background: url(../images/user_center_left_bg.png) repeat-y;width:188px;height:600px;margin-top:20px}
+.user_center_left h3{padding:15px 0;border-bottom:1px solid #EAEAEA;}
+.user_center_left ul li{margin-top:20px;}
+.user_center_left ul li a:hover{color:#cc0000;}
+.active{color:#cc0000;font-weight: bold;}
+.user_center_right{margin:20px 0 0 15px;width:893px}
+.user_center_top{height:125px;background: #fff;border:1px solid #D6D6D6;text-align: left}
+.user_head_img{height:70px;width:70px;border-radius:40px;margin:28px 0 0 35px}
+.user_center_top .hi{font-size: 16px;font-weight:bold}
+.user_center_top .nickname{color:#e40002;}
+.user_center_form{text-align: left}
+.user_center_top .logout{font-size:12px;margin-left:20px}
+.user_center_top .yewu{color:#8F8F8F;}
+.top_right{margin-top:15px;margin-left:30px}
+.top_right p{padding:5px 0 }
+.user_center_form{background: #fff;border:1px solid #D6D6D6;padding:20px;margin-top:15px;min-height:455px}
+.user_center_form ul li span{display: inline-block;width: 100px;text-align: right}
+.user_center_form ul li{margin-top:15px}
+.user_center_form ul li input,select,textarea{height:32px;line-height: 32px;width:200px;text-indent: 7px;}
+form{padding-left:10%;padding-top: 50px;}
+.my_info_img [type="file"]{margin-top:5px}
+.my_info_img .gray{width:400px;color:#9ea190;text-align:left;margin-top:5px}

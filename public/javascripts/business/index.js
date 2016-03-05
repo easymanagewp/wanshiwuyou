@@ -21,11 +21,8 @@ require([
 
     var $Notice = $('#notice');
 
-    var noticeIndexs = ['A','B','C','D','E'];
-
     /* 获取公告信息 */
     $http.Get('/notice.do').success(function(resp){
-        $Notice.html('');
         if($http.ValidateResp.success(resp)){
             for(var iIndex=0;iIndex<resp.result.length;iIndex++) {
                 var colo = "";
@@ -37,10 +34,8 @@ require([
                     colo = 'green';
                 }
                 $Notice.append(
-                    $('<li>').append(
-                        $('<img>').attr('src',base_path+'/images/'+noticeIndexs[iIndex]+'.png')
-                    ).append(
-                        $('<span>').html('[公告]')
+                    $('<li>').addClass('con').append(
+                        $('<i>').addClass(colo).text((iIndex+1))
                     ).append(
                         $('<a>').attr('href','/notice/detail.html?id='+resp.result[iIndex]._id).attr('target','_blank').text(resp.result[iIndex].title)
                     )
@@ -124,15 +119,15 @@ require([
      * 业务类型容器
      * @type {*|jQuery|HTMLElement}
      */
-    var BUSINESS_TYPE_BAR = $('.business_type_bar');
+    var BUSINESS_TYPE_BAR = $('#business_type_bar');
 
 
     /**
      * 业务类型模板
      */
-    var BUSINESS_TYPE_TEMPLATE = $template.render("<li onclick='to_business_type(\"\")'><a href='javascript:void(0)'>全部</a></li>" +
+    var BUSINESS_TYPE_TEMPLATE = $template.render("<li onclick='to_business_type(\"\")'>全部</li>" +
         "{{each business_types as business_type}}" +
-        "<li class='{{business_type.code}}' onclick='to_business_type(\"{{business_type.code}}\")'><a href='javascript:void(0)'>{{business_type.name}}</a></li>" +
+        "<li id='{{business_type.code}}' onclick='to_business_type(\"{{business_type.code}}\")'>{{business_type.name}}</li>" +
         "{{/each}}");
     /**
      * 业务类型数据源
@@ -148,7 +143,7 @@ require([
      * 推广用户list
      * @type {*|jQuery|HTMLElement}
      */
-    var EXTENSION_USER_LIST = $('#extension_user_list');
+    var EXTENSION_USER_LIST = $('#extension_user_list tbody');
     /**
      * 推广用户的数据源
      */
@@ -157,12 +152,13 @@ require([
      * 推广用户列表模板
      */
     var BUSINESS_TYPE_EXTENSION_USER_TEMPLATE = $template.render("{{each users as user}}" +
-        "<ul class='infos'><li class='info'>" +
-            "<div class='link_pic'><img src='"+base_path+"{{user.business_card}}'></div>"+
-            "<div class='div'><img src='"+base_path+"/images/name_img.png'>{{user.nickname}}<span>{{user.advertisement}}</span></div>"+
-            "<div class='i-descr'><p>{{user.business}}</p></div>"+
-            "<div class='jiaoliu_btn'><a href='javascript:void(0)' onclick='sendMessageForUser(\"{{user._id}}\")'>在线交流</a></div>"+
-        "</li></ul>" +
+        "<tr>" +
+            "<td class='center'><img title=\"<image src=\'"+base_path+"{{user.business_card}}\' style=\'width:339px;height:210px;\'/>\" width='35' height='35' src='"+base_path+"/{{user.head_img | head_parse_default}}'></td>" +
+            "<td>{{user.nickname}}</td>" +
+            "<td><a href='javascript:void(0)' onclick='openHomePage(\"{{user.home_page}}\")'>{{user.advertisement}}</a></td>" +
+            "<td>{{user.business}}</td>" +
+            "<td><a href='javascript:void(0)' onclick='sendMessageForUser(\"{{user._id}}\")'><image width='25' height='25' src='"+base_path+"/images/jiaoliu.png'/> 在线交流</a></td>"+
+        "</tr>" +
         "{{/each}}");
 
     /**
@@ -174,7 +170,7 @@ require([
         BUSINESS_TYPE_BAR.append(business_types_bar_html);
         var business_type_code = $location.params.business_type_code;
         if($utils.strNotBlankOrNull(business_type_code)){
-            $("."+business_type_code).addClass('active');
+            $("#"+business_type_code).addClass('active');
         }else{
             BUSINESS_TYPE_BAR.find('li:first').addClass('active');
         }
@@ -186,7 +182,6 @@ require([
      */
     var parse_business_type_extension_user = function(users){
         var business_type_extension_user_html = BUSINESS_TYPE_EXTENSION_USER_TEMPLATE({users:users});
-        EXTENSION_USER_LIST.html('');
         EXTENSION_USER_LIST.append(business_type_extension_user_html);
         $('*[title]').css('cursor','pointer')
         $('*[title]').tipsy({trigger:'hover',fade:true,html:true});
