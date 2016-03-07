@@ -29,7 +29,8 @@ var user = new datasource.mongoose.Schema({
     zip_code :{type : String},          /* 邮政编码 */
     fax : {type : String},              /* 传真 */
     introduce : {type : String},         /* 介绍 */
-    extension : {type:Boolean,default:!1}   /* 是否正在推广 */
+    extension : {type:Boolean,default:!1},   /* 是否正在推广 */
+    isDel : {type:Boolean,default:!1} /* 账户是否可用 */
 });
 
 // 创建运营商数据

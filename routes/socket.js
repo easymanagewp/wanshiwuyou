@@ -52,6 +52,7 @@ $$Socket.$Init = function(_Socket){
     });
 };
 
+
 $$Socket.$sendMessage = function(_conversation){
     var _UserTokens = $$Cache.$GetCache('users',_conversation.receive_user);
     if(_UserTokens && _UserTokens.length>0) {
@@ -84,6 +85,24 @@ $$Socket.$SendQuestion = function(_UserId,question){
                 $Socket.emit('sendQuestion',question);
             }
         }
+    }
+};
+
+$$Socket.$SendTZ = function(tz){
+    var _UserTokens = $$Cache.$GetCache('users',tz.userId);
+    if(_UserTokens && _UserTokens.length>0) {
+        for(var iIndex=0;iIndex<_UserTokens.length;iIndex++){
+            var _UserToken = _UserTokens[iIndex];
+            var $Socket = $$Socket.$GetSocket(_UserToken);
+            if($Socket){
+                $Socket.emit('sendTZ',tz);
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }else{
+        return false;
     }
 };
 

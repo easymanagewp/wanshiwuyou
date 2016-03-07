@@ -2,7 +2,7 @@ var user_dao = require('../../../dao/user');
 var response = require('../../../expand_models/response');
 
 module.exports = function(req,res){
-    user_dao.page({},parseInt(req.query.request_page),parseInt(req.query.page_size),function(err, result){
+    user_dao.page({$or:[{isDel : {$exists:false}},{isDel:false}]},parseInt(req.query.request_page),parseInt(req.query.page_size),function(err, result){
         if(err){
             res.json(response.create(response.STATUS.FAIL,{},"获取数据失败"));
         }else{

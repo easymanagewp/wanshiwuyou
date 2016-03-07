@@ -25,6 +25,9 @@ require(['data-grid','dataform','utils','lib_user'],function($$dataGrid,$$dataFo
         $("#advertisement").html(data.advertisement);
         $("#business").html(data.business);
         $("#business_type").html(data.business_type);
+        $("#qq").html(data.qq);
+        $("#email").html(data.email);
+        $("#phone").html(data.phone);
     });
 
     $$dataForm.init($form,{
@@ -40,7 +43,7 @@ require(['data-grid','dataform','utils','lib_user'],function($$dataGrid,$$dataFo
     $form.find('#no').on('click',function(){
         $form.find(':input[name="approve_result"]').val(false);
         $form.trigger('action');
-    })
+    });
 
     $form.on('submitDataSuccess',function(e,resp){
         $grid.trigger('reloadData');

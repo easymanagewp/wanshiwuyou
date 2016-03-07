@@ -196,7 +196,7 @@ define(function(require,exports,modules){
         this.$element.find(':input')
             .not(':button, :submit, :reset, :hidden')
             .removeAttr('disabled');
-
+  	this.$element.find('.save').css('display','');
         this.$element.removeClass('c_edit_view');
     };
 

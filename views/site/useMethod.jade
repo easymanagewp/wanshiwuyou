@@ -1,0 +1,11 @@
+// 首页
+extends ../layout/site_layout
+block site_view
+    link(rel='stylesheet', href='/stylesheets/extension_apply.css')
+    link(rel='stylesheet', href='/stylesheets/notice.css')
+    .wrapper.navbar-fixed-top
+        .navbar-text
+            | 位置:使用方法
+    .notice_con
+        .txt_box=site.use_method
+

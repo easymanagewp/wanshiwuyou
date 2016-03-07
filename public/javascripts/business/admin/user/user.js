@@ -1,8 +1,10 @@
-require(['data-grid','dataform','utils'],function($$dataGrid,$$dataForm,$$utils){
+require(['data-grid','dataform','utils','data-grid-plugin-del'],function($$dataGrid,$$dataForm,$$utils,$$dataGridPluginDel){
     var $grid = $('.c_list_table');
     var $form = $('.c_edit_container');
 
     var $dataGrid = $$dataGrid.init('/admin/user.do',$grid,$('#gridTemplate').text());
+    /* 为datagrid添加删除插件 */
+    $dataGrid.plugin($$dataGridPluginDel,'/admin/user/{{id}}.do','/admin/user.do');
 
     $$dataForm.init($form,{
         viewDataSource : "/admin/user/{{id}}.do",

@@ -14,8 +14,11 @@ module.exports = function(req,res,next){
   }
 
   user_dao.findByLoginNameAndPwd(login_name,password,function(err,doc){
+    console.info(doc);
     if(err || doc.length != 1){
       res.json(response.create(response.STATUS.FAIL,err,'用户名或密码错误'));
+    }else if(doc[0].isDel){
+      res.json(response.create(response.STATUS.FAIL,err,'您的账户已被网站管理员删除,如有任何疑问,请联系客服人员进行处理'));
     }else{
       var usertoken = uuid.v4();
       $$MapCache.$AddCache(usertoken,"userInfo",doc[0]);

@@ -2,7 +2,8 @@
 .sy_contentbox{width:100%;border:1px solid #ddd;margin:10px 0}
 .left_cont{width:75%;float: left;}
 .right_cont{width:24%;float:right;text-align: left;margin-left: 10px;margin-bottom:20px;}
-.business_type_bar{background: url("../images/busbar.png") repeat-x;height:42px;width:100%;line-height:42px}
+.business_type_bar{background: url("../images/busbar.png") repeat-x; height:42px;width:100%;line-height:42px}
+.business_type_bar ul{width: 10000px;}
 .business_type_bar ul li{float: left;padding:0 14.3px;color:#fff;font-size: 16px;border-right:1px solid #B20707;cursor:pointer;}
 .business_type_bar .active{background:#AD0000}
 .tabbedtable{width:100%;border-collapse: collapse;}
@@ -22,4 +23,11 @@
 .right_cont li{box-sizing: border-box;margin-bottom:15px;}
 .right_cont ul li i{width:20px;display: inline-block;text-align: center;font-style: normal;background: #888;color:#fff;}
 .right_cont ul li a{padding-left:10px}
+
+.guanggao{position:absolute;top:145px;left:54px}
+.guanggao .ggleft{position:fixed;left:61px}
+.guanggao .ggright{position:fixed;right:61px}
+
+
+#toLeft img{height:20px;width:20px}
 

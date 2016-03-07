@@ -5,5 +5,6 @@ var router = express.Router();
 router.get('/user.html',require('./to_user'));
 router.get('/user.do',require('./get_users'));
 router.get('/user/:id.do',require('./get_user'));
+router.delete('/user/:id.do',require('./del_user'));
 
 module.exports = router;

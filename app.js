@@ -9,6 +9,19 @@ var uuid = require('node-uuid');
 var utils = require('./expand_models/utils');
 var $$MapCache = require('./expand_models/MapCache');
 
+var siteDao = require('./dao/site');
+
+
+siteDao.findAsync().then(function(sites){
+  if(sites.length < 1){
+    return siteDao.saveAsync({});
+  }else{
+  }
+}).then(function(){
+}).catch(function(){
+  console.log("网站信息初始化失败");
+});
+
 var app = express();
 
 // view engine setup
@@ -65,7 +78,11 @@ app.use('/',require('LoginInterceptor')({
     '/register_2.html',
     '/register_3.html',
     '/feedback.html',
-    '/notice/detail.html'
+    '/notice/detail.html',
+    '/site/about.html',
+    '/site/cooperation.html',
+    '/site/help.html',
+    '/site/use_method.html'
   ],
   $IsLogin : function(req,res){
     /* 1：验证token */

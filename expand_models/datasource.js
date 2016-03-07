@@ -2,7 +2,7 @@
 var $$Promise = require('bluebird');
 var mongoose = $$Promise.promisifyAll(require('mongoose'));
 //120.27.103.105
-var db = mongoose.createConnection('mongodb://localhost:27017/test');
+var db = mongoose.createConnection('mongodb://localhost:27017/wan451');
 
 // 链接错误
 db.on('error', function(error) {

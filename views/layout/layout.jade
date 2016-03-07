@@ -31,6 +31,7 @@ html
                 li: a(href="/my_question.html").headnav 我的问题(<em id="wenti_count" style="color:yellow">0</em>)
                 li: a(href="/answer.html").headnav 我的回答(<em id="huida_count" style="color:yellow">0</em>)
                 li: a(href="javascript:void(0)")#messageView.headnav 消息(<em id="xiaoxi_count" style="color:yellow">0</em>)
+                li: a(href="javascript:void(0)")#tongzhi.headnav 通知(<em id="tongzhi_count" style="color:yellow">0</em>)
                 li: a(href="/apply.html").headnav 信息推广
                 li: a(href="/user_center/base_info.html").headnav 我
                 li: a(href="javascript:void(0)").logout.headnav 退出
@@ -43,18 +44,20 @@ html
                li
                  a(href="/register_1.html").headnav 注册
                li
-                 a(href="").headnav 帮助
+                 a(href="/site/help.html").headnav 帮助
 
       block content
       .footer.center
         .wrapper
           ul
             li
-              a(href="").footnav 关于我们 &nbsp;|
+              a(href="/site/about.html").footnav 关于我们 &nbsp;|
             li
-              a(href="").footnav 参股合作 &nbsp;|
+              a(href="/site/cooperation.html").footnav 参股合作 &nbsp;|
             li
-              a(href="").footnav 使用方法 &nbsp;|
+              a(href="/site/use_method.html").footnav 使用方法 &nbsp;|
             li
-              a(href="/feedback.html").footnav 建议反馈&nbsp; 晋ICP备09004455-2号
+              a(href="/feedback.html").footnav 建议反馈&nbsp;
+            li
+              a(href="http://icp.alexa.cn/index.php?q=wan451.com&code=enotd3&icp_host=hncainfo",target="_black").footnav 晋ICP备09004455-2号
 

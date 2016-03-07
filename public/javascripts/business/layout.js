@@ -10,9 +10,42 @@ require(['jquery','utils','http','$$Socket','$$Cookie','$$Noty'],function($,$uti
         var $WenTiCount = $('#wenti_count');
         var $HuiDaCount = $('#huida_count');
         var $MsgCount = $('#xiaoxi_count');
+        var $TongZhi = $('#tongzhi');
+
+
 
         $('#messageView').on('click',function(){
             $$http.Get('/conversation/view.do').success(function(resp){
+            }).go();
+        });
+
+        $$http.Get('/tongzhi.do').success(function(resp){
+           if($$http.ValidateResp.success(resp)){
+               var count = resp.result.length;
+               $TongZhi.find('#tongzhi_count').html(count);
+           }
+        }).go();
+
+        $TongZhi.on('click',function(){
+            $$http.Get('/tongzhi.do').success(function(resp) {
+                if ($$http.ValidateResp.success(resp)) {
+                    var tongZhiArr = resp.result;
+                    for (var iIndex = 0; iIndex < tongZhiArr.length; iIndex++) {
+                        var tz = tongZhiArr[iIndex];
+                        $$Noty({
+                            text: tz.content,
+                            layout: 'bottomRight',
+                            type: 'success',
+                            animation: {
+                                open: {height: 'toggle'}, // jQuery animate function property object
+                                close: {height: 'toggle'}, // jQuery animate function property object
+                                easing: 'swing', // easing
+                                speed: 500 // opening & closing animation speed
+                            }
+                        });
+                        $$http.Put('/tongzhi/'+tz._id+".do").success(function(){}).go();
+                    }
+                }
             }).go();
         });
 
@@ -68,7 +101,23 @@ require(['jquery','utils','http','$$Socket','$$Cookie','$$Noty'],function($,$uti
                 }
             });
         });
+
+        $$Socket.on('sendTZ',function(tz){
+            $$Noty({
+                text: tz.content,
+                layout : 'bottomRight',
+                type : 'success',
+                animation: {
+                    open: {height: 'toggle'}, // jQuery animate function property object
+                    close: {height: 'toggle'}, // jQuery animate function property object
+                    easing: 'swing', // easing
+                    speed: 500 // opening & closing animation speed
+                }
+            });
+        });
     }
+
+
 
     $$Socket.on('receiveMessage',function(_Conversation){
         var url = "";

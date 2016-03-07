@@ -1,0 +1,20 @@
+//
+   Created by wangpeng on 16/3/6.
+
+.c_title_bar
+    .c_title_text="当前位置：网站管理 > 帮助"
+
+textarea(style="margin:10px 0px 0px 10px;width:900px;height:200px;")#content=site.help
+.clear
+br
+input(type="hidden",value=site._id)#id
+button(style="margin-left:850px;").save
+
+script(type="text/javascript").
+    require(['jquery','http'],function($,http){
+        $('.save').on('click',function(){
+            http.Put('/admin/site/help/'+$('#id').val()+'.do').params('help',$('#content').val()).success(function(resp){
+                alert(resp.message);
+            }).go();
+        });
+    });

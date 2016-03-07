@@ -21,6 +21,13 @@ require([
 
     var $Notice = $('#notice');
 
+    $("#toRight").on('click',function(){
+        $('#bar').scrollLeft($('#bar').scrollLeft()+300);
+    });
+    $("#toLeft").on('click',function(){
+        $('#bar').scrollLeft($('#bar').scrollLeft()-300);
+    });
+
     /* 获取公告信息 */
     $http.Get('/notice.do').success(function(resp){
         if($http.ValidateResp.success(resp)){
