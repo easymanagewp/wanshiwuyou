@@ -21,6 +21,8 @@ require([
 
     var $Notice = $('#notice');
 
+    
+
     $("#toRight").on('click',function(){
         $('#bar').scrollLeft($('#bar').scrollLeft()+300);
     });
@@ -40,13 +42,24 @@ require([
                 }else if(iIndex == 2){
                     colo = 'green';
                 }
-                $Notice.append(
-                    $('<li>').addClass('con').append(
-                        $('<i>').addClass(colo).text((iIndex+1))
-                    ).append(
-                        $('<a>').attr('href','/notice/detail.html?id='+resp.result[iIndex]._id).attr('target','_blank').text(resp.result[iIndex].title)
-                    )
+                $Notice.find('li.con div.content').append(
+                    resp.result[iIndex].content
                 )
+            }
+
+
+            if($Notice.find('li.con div.content').height() > 290){
+                $Notice.find('li.con').append($Notice.find('li.con div.content').clone());
+        
+
+                setInterval(function(){
+                    $Notice.find('li.con')[0].scrollTop = ($Notice.find('li.con')[0].scrollTop+2);
+                    if($Notice.find('li.con')[0].scrollTop >= $($Notice.find('li.con div.content')[0]).height()){
+                        $($Notice.find('li.con div.content')[0]).remove();
+                        $Notice.find('li.con').append($($Notice.find('li.con div.content')[0]).clone());
+                        $Notice.find('li.con')[0].scrollTop = $Notice.find('li.con')[0].scrollTop - $($Notice.find('li.con div.content')[0]).height();
+                    }
+                },100);
             }
         }
     }).go();

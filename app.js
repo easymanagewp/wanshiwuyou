@@ -66,7 +66,7 @@ app.use(function(req,res,next){
     }
     _render.call(res, view, options, callback);
   };
-  next();
+    
 });
 
 app.use('/',require('LoginInterceptor')({
